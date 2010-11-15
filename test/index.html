@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Fancy Letter Plugin Tests</title>
+  <link rel="stylesheet" href="qunit/qunit.css" type="text/css" media="screen">
+  
+  <style>
+  span.fancy-letter {
+    font-size: 40px;
+    border-style: solid;
+    border-left-width: 20px;
+  }
+  span.scarlet-letter {
+    float: left;
+    border: 1px solid #900;
+    padding: 2px 4px;
+    color: #900;
+    background-color: #ededed;
+    margin: -5px 2px 0 0;
+    font-weight: bold;
+    font-size: 220%;
+  }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/lib/jquery.js"%3E%3C/script%3E'));</script>
+
+  <script src="qunit/qunit.js"></script>
+  <script src="../jquery.fancyletter.js"></script>
+  <script src="tests.js"></script>
+</head>
+<body>
+  <h1 id="qunit-header">jQuery Fancy Letter Plugin Tests</h1>
+  <h2 id="qunit-banner"></h2>
+  <div id="qunit-testrunner-toolbar"></div>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+  <div id="qunit-fixture">
+    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing<code> elit</code>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <ul id="sl">
+      <li>"Young Goodman Brown"</li>
+      <li>The Minister's Black Veil</li>
+      <li>1 two three</li>
+      <li> <span><em>Scarlet Letter</em></span></li>
+      <li><br />Twice-Told Tales</li>
+    </ul>
+  </div>
+</body>
+
+</html>

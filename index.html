@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>jQuery Fancy Letter Plugin</title>
+<link rel="stylesheet" media="screen" href="../jq.css" />
+<link rel="stylesheet" media="screen" href="/shared/tabs.css" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/lib/jquery.js"%3E%3C/script%3E'));</script>
+
+<script src="/shared/jquery.tabs.min.js"></script>
+<script src="/shared/jquery.history.js"></script>
+<script src="/shared/chili-1.8.js"></script>
+<script type="text/javascript" src="jquery.fancyletter.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+    // initialize the tabs
+    var main = $('#main').tabs(1);
+
+    // demo
+    $('#demo p:first').fancyletter();
+    $('#demo p:eq(1)').fancyletter({commonClass: 'scarlet-letter'});
+    $('#demo .steffman').fancyletter({commonClass: 'ds'});
+    $('#demo-divs > div').fancyletter({ltrClassPrefix: 'bg-', characters: '[A-S]'});
+});
+
+</script>
+<style type="text/css" media="screen">
+  @font-face {
+  	font-family: 'SentinelRegular';
+  	src: url('fonts/sentinel-webfont.eot');
+  	src: local('☺'), url('fonts/sentinel-webfont.woff') format('woff'), url('fonts/sentinel-webfont.ttf') format('truetype'), url('fonts/sentinel-webfont.svg#webfontbVUTdIaz') format('svg');
+  	font-weight: normal;
+  	font-style: normal;
+  }
+  
+  span.fancy-letter {
+    font-size: 200%;
+  }
+  span.scarlet-letter {
+    float: left;
+    border: 1px solid #900;
+    padding: 2px 4px;
+    color: #900;
+    background-color: #ededed;
+    margin: -5px 2px 0 0;
+    font-weight: bold;
+    font-size: 220%;
+  }
+  .steffman { padding: .5em; width: 300px; }
+  .ds {
+    font-family: 'SentinelRegular', serif;
+    font-size: 3em;
+    line-height: 1em;
+    padding: 6px 4px 0 0;
+    float: left;
+  }
+  /* not for fancy letters */
+  #demo-divs {
+    margin: .5em;
+    padding: .5em;
+  }
+  #demo-divs div {
+    padding: .25em;
+    margin: .25em 0;
+    border: 1px solid #ccc;
+  }
+</style>
+</head>
+<body>
+<div><a id="logo" href="http://jquery.com" title="Powered By jQuery"></a></div>
+<h1 id="banner"><a id="backnav" href="..">&lsaquo;&lsaquo; home</a>jQuery Fancy Letter Plugin</h1>
+<div id="main">
+  <ul id="nav" class="anchors">
+    <li><a href="#getting-started">Overview</a></li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#options">API / Options</a></li>
+    <li><a href="#download">Download &amp; Support</a></li>
+  </ul>
+    <div id="getting-started" class="tabContent">
+        <h1>Overview</h1>
+        <p>The Fancy Letter Plugin lets you prettify your web page by styling the first letter of any element while keeping the HTML markup clean and readable by both human and machine.</p>
+        <p>If you like this plugin and you're feeling generous, perhaps you'd also like to visit my <a href="http://www.amazon.com/gp/registry/wishlist/1NLSYA46XTVG4/" title="Amazon.com: Wish List">amazon.com wish list</a>?</p>
+        <h1>Quick Start Guide</h1>
+        
+        <div class="step-one">Include the <strong>jQuery</strong> core file and the <strong>Fancy Letter</strong> plugin in the <code>&lt;head&gt;</code> of your document. After these scripts are referenced, you can reference a custom script file to add your fancy letters (preferred) or enter the script directly in the <code>&lt;head&gt;</code> (shown below).</div>
+        <br />
+<pre><code class="mix">&lt;script src="jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="jquery.fancyletter.js" type="text/javascript"&gt;&lt;/script&gt;
+
+&lt;script type="text/javascript"&gt;
+$(document).ready(function() {
+
+  // simple example wraps the first letter of 
+  $('div.content p').fancyletter();
+  
+});
+&lt;/script&gt;
+
+</code></pre>
+      <p>Fancy letters are wrapped in a span tag. Each span is given two classes: a common class ("fancy-letter" by default) and a "letter" class.</p>
+      <div class="step-two">Add CSS to style the fancy letters. </div>
+      <p>For example, after applying the <code>.fancyletter()</code> method to: <br /> <code>&lt;p&gt;This paragraph&lt;/p&gt;</code> </p>
+      <p>it might look like this:<br />
+        <code>&lt;p&gt;&lt;span class="fancy-letter ltr-t"&gt;T&lt;/span&gt;his paragraph&lt;/p&gt;</code>.</p>
+      <div class="step-three">Add HTML markup to your page for elements that you want to begin with a fancy letter.</div>
+
+      <p>See <a href="#options">API / Options</a> for more ways to customize the behavior and appearance of the expander.</p>
+    </div>
+    <div id="demo" class="tabContent">
+      Here are four examples of the Fancy Letter Plugin in action:
+
+      <p>This sentence begins with a fancy letter, produced by the code below:</p>
+      <pre><code>$('#demo p:first').fancyletter();</code></pre>
+      <p><em>And</em> this sentence begins with a different fancy letter, produced by this code:</p>
+      <br style="clear: left;" />
+      <pre><code>$('#demo p:eq(1)').fancyletter({commonClass: 'scarlet-letter'});    </code></pre>
+
+      <p class="steffman">Dieter Steffman has a lot of beautiful fonts like this one (Sentinal). To show it, I used the following code, along with an @font-face declaration. View source to see the styles applied.</p>
+      <pre style="clear:left;"><code>$('#demo .steffman').fancyletter({commonClass: 'ds'});</code></pre>
+      
+      <div id="demo-divs">
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+        <div>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+        <div>Tut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+        <div>Code for these fancy letters is shown below. Note the use of the <code>characters</code> option. It takes a string that is interpreted as a regular expression. </div>  
+      </div>
+              <pre><code>$('#demo-divs > div').fancyletter({ltrClassPrefix: 'bg-', characters: '[A-S]'}); </code></pre>
+    </div>
+    <div id="options" class="tabContent">
+        <h1>Fancy Letter Plugin API / Options</h1>
+        <p>The Fancy Letter Plugin API provides a single method with a few options.</p>
+        <dl>
+            <dt><code class="method">fancyletter(options)</code></dt>
+            <dd>Wraps a span element (with classes) around the first letter of all elements matched by the jQuery selector. </dd>
+        </dl>
+<pre><code class="mix">$.fn.fancyletter.defaults = {
+  commonClass:      'fancy-letter', 
+  ltrClassPrefix:   'ltr-',
+  characters:       '[a-zA-Z]',
+  bgImgPath:        null,
+  bgImgExt:         null
+};
+</code></pre>
+    </div>
+
+    <div id="download" class="tabContent">
+        <h1>Download</h1>
+        The Fancy Letter Plugin is available at:
+        <a class="external" href="http://github.com/kswedberg/jquery-fancyletter/">github.com/kswedberg/jquery-fancyletter</a>.
+        
+        <h1>Support</h1>
+        <p>If you discover a bug with the Fancy Letter Plugin, please submit a report at
+          <a class="external" href="http://github.com/kswedberg/jquery-fancyletter/issues">github.com/kswedberg/jquery-fancyletter/issues</a>.
+        </p>
+      
+        <div id="footer">
+        This documentation is maintained by Karl Swedberg.  Send comments or questions to karl [at] learningjquery [dot] com.
+        </div>
+    </div>
+</div> <!-- main -->
+
+</body></html>
