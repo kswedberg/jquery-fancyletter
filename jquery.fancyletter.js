@@ -1,5 +1,5 @@
 /*!
- * jQuery Fancy Letter Plugin v1.0
+ * jQuery Fancy Letter Plugin v1.1
  *
  * Date: Sun Jan 30 21:55:00 2011 CST
  * Requires: jQuery v1.2.6+
