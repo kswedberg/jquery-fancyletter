@@ -1,10 +1,10 @@
 /*!
  * jQuery Fancy Letter Plugin v1.0
  *
- * Date: Sun Nov 14 22:37:22 2010 EST
+ * Date: Sun Jan 30 21:55:00 2011 CST
  * Requires: jQuery v1.2.6+
  *
- * Copyright 2010, Karl Swedberg
+ * Copyright 2010-11, Karl Swedberg, Matt Wiebe
  * Dual licensed under the MIT and GPL licenses (just like jQuery):
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -18,32 +18,46 @@
 
   $.fn.fancyletter = function(options) {
     var specialChars = {
-      '"': 'ldquo',
-      "'": 'lsquo',
-      '(': 'lparen'
+      '"': 'dprime',
+      "'": 'prime',
+      '“': 'ldquo',
+      '‘': 'lsquo',
+      '(': 'lparen',
+      '«': 'laquo',
+      '‹': 'lsaquo'
     };
     return this.each(function() {
       var text, firstLetter, firstltr, nodeInfo,
           node = this,
           $this = $(this),
           opts = $.extend({}, $.fn.fancyletter.defaults, options || {}, $.metadata ? $this.metadata() : $.meta ? $this.data() : {}),
-          re = new RegExp(opts.characters);
+          re = new RegExp(opts.characters),
+          sliceDepth = 1;
           
       nodeInfo = getNodeValue(node);
       text = nodeInfo.val;
       node = nodeInfo.node;
-      
-      firstLetter = text.slice(0,1);
+
+      firstLetter = text.slice(0,sliceDepth);
+      // do we have punctuation?
+      if ( opts.groupPunctuation && firstLetter in specialChars ) {
+         // proper inclusion of initial punctuation in first-letter
+         if ( opts.groupPunctuation ) {
+            sliceDepth = 2;
+            firstltr = opts.punctuatedClass + "  " + opts.punctuatedClass + "-" + specialChars[firstLetter];
+            firstLetter = text.slice(1,2);
+            firstltr = firstLetter.toLowerCase() + " " + firstltr;
+         }
+         else {
+            firstltr = specialChars[firstletter];
+         }
+
+      }
 
       if ( text && re.test(firstLetter) ) {
-    	  var $span = $('<span></span>');
-      
-        firstltr = firstLetter.toLowerCase();
-        if (firstltr in specialChars) {
-          firstltr = specialChars[firstltr];
-        }
-
-      	node.nodeValue = text.slice(1);
+        var $span = $('<span></span>');
+        firstLetter = text.slice(0,sliceDepth);
+        node.nodeValue = text.slice(sliceDepth);
 
     	  $span.text(firstLetter);
     	  $span.addClass(opts.commonClass + ' ' + opts.ltrClassPrefix + firstltr);
@@ -83,7 +97,9 @@
   $.fn.fancyletter.defaults = {
     commonClass:      'fancy-letter', 
     ltrClassPrefix:   'ltr-',
-    characters:       '[a-zA-Z]'
+    characters:       '[a-zA-Z]',
+    punctuatedClass:  'punct',
+    groupPunctuation: true
   };
 
 })(jQuery);

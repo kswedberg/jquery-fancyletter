@@ -39,7 +39,15 @@ The following options, shown here with their default values, are available:
 
       // a string containing a Regular Expression indicating the set of characters
       // that can be transformed into a fancy letter.
-      characters: '[a-zA-Z]'
+      characters: '[a-zA-Z]',
+
+      // A String added as a class to fancy letters
+      punctuatedClass: 'punct',
+
+      // Bool. Group opening punctuation with initial caps per the W3 spec
+      // See http://www.w3.org/TR/css3-selectors/#first-letter
+      groupPunctuation: true
+
     };
 
 You can override them globally before calling `.fancyletter()`. For example, globally change the set of characters that can be transformed into a fancy letter:
