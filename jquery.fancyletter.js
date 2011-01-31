@@ -20,8 +20,8 @@
     var specialChars = {
       '"': 'ldquo',
       "'": 'lsquo',
-      '“': 'ldquo-',
-      '‘': 'lsquo-',
+      '“': 'ldquo-real',
+      '‘': 'lsquo-real',
       '(': 'lparen',
       '«': 'laquo',
       '‹': 'lsaquo'
