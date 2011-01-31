@@ -18,10 +18,10 @@
 
   $.fn.fancyletter = function(options) {
     var specialChars = {
-      '"': 'dprime',
-      "'": 'prime',
-      '“': 'ldquo',
-      '‘': 'lsquo',
+      '"': 'ldquo',
+      "'": 'lsquo',
+      '“': 'ldquo-',
+      '‘': 'lsquo-',
       '(': 'lparen',
       '«': 'laquo',
       '‹': 'lsaquo'
@@ -44,7 +44,7 @@
          // proper inclusion of initial punctuation in first-letter
          if ( opts.groupPunctuation ) {
             sliceDepth = 2;
-            firstltr = opts.punctuatedClass + "  " + opts.punctuatedClass + "-" + specialChars[firstLetter];
+            firstltr = opts.punctuatedClass + "  " + opts.ltrClassPrefix + specialChars[firstLetter];
             firstLetter = text.slice(1,2);
             firstltr = firstLetter.toLowerCase() + " " + firstltr;
          }
@@ -52,6 +52,9 @@
             firstltr = specialChars[firstletter];
          }
 
+      }
+      else {
+         firstltr = firstLetter.toLowerCase();
       }
 
       if ( text && re.test(firstLetter) ) {
