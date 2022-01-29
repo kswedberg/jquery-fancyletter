@@ -1,0 +1,280 @@
+/*
+===============================================================================
+Chili is the jQuery code highlighter plugin
+...............................................................................
+                                               Copyright 2007 / Andrea Ercolino
+-------------------------------------------------------------------------------
+LICENSE: http://www.opensource.org/licenses/mit-license.php
+WEBSITE: http://noteslog.com/chili/
+===============================================================================
+*/
+
+/*
+this file shows how to configure a static setup
+it must be linked from the head of a page like:
+<link rel="stylesheet" type="text/css" href="chili/recipes.css"/>
+*/
+
+.html {
+  color: #333;
+}
+/*.html .php    { color: red; font-weight: bold; }*/
+.html .tag {
+  color: #d44314;
+}
+.html .aname {
+  color: #036a07;
+}
+.html .avalue {
+  color: #48507b;
+}
+.html .mlcom {
+  color: #5f617e;
+}
+.html .entity {
+  color: #cc8c3c;
+}
+
+.mlcom {
+  color: #5f617e;
+}
+.com {
+  color: #5f617e;
+}
+.regexp {
+  color: #990066;
+}
+.string {
+  color: #036a07;
+}
+.global {
+  color: #cc8c3c;
+}
+.keywords {
+  color: #0000ff;
+}
+.numbers {
+  color: #009;
+}
+
+.method,
+.step-done span.method {
+  color: #d44314;
+}
+
+.selector,
+.step-done span.selector {
+  color: #48507b;
+}
+
+.mysql .function {
+  color: #e17100;
+}
+.mysql .keyword {
+  color: navy;
+  font-weight: bold;
+}
+.mysql .mlcom {
+  color: gray;
+}
+.mysql .com {
+  color: green;
+}
+.mysql .number {
+  color: red;
+}
+.mysql .hexnum {
+  color: red;
+  font-weight: bold;
+}
+.mysql .string {
+  color: purple;
+}
+.mysql .quid {
+  color: fuchsia;
+}
+.mysql .id {
+  color: maroon;
+}
+.mysql .value {
+  color: gray;
+  font-weight: bold;
+}
+.mysql .variable {
+  color: #4040c2;
+}
+
+.php .com {
+  color: green;
+}
+.php .const1 {
+  color: red;
+}
+.php .const2 {
+  color: red;
+}
+.php .func {
+  color: #e17100;
+}
+.php .global {
+  color: red;
+}
+.php .keyword {
+  color: navy;
+  font-weight: bold;
+}
+.php .mlcom {
+  color: gray;
+}
+.php .name {
+  color: maroon;
+}
+.php .number {
+  color: red;
+}
+.php .string1 {
+  color: purple;
+}
+.php .string2 {
+  color: fuchsia;
+}
+.php .value {
+  color: gray;
+  font-weight: bold;
+}
+.php .variable {
+  color: #4040c2;
+}
+
+.css .mlcom {
+  color: #4040c2;
+}
+.css .color {
+  color: green;
+}
+.css .string {
+  color: teal;
+}
+.css .attrib {
+  color: navy;
+  font-weight: bold;
+}
+.css .value {
+  color: blue;
+}
+.css .number {
+  color: red;
+}
+
+/** =from cluetip plugin
+************************************************************/
+/* syntax highlighting with Chili */
+.jscom,
+.mix .htcom,
+.com,
+.comm {
+  color: gray;
+}
+.regexp {
+  color: maroon;
+}
+.string {
+  color: teal;
+}
+.keywords {
+  color: blue;
+}
+.global {
+  color: #008;
+}
+.numbers {
+  color: #880;
+}
+
+.doctype,
+.tag {
+  color: blue;
+}
+.entity {
+  color: blue;
+}
+.string {
+  color: teal;
+}
+.aname {
+  color: maroon;
+}
+.avalue {
+  color: maroon;
+}
+.jquery {
+  color: #00a;
+}
+.plugin {
+  color: red;
+  font-weight: bold;
+}
+.htcom {
+  color: green;
+}
+.php .tag {
+  color: purple;
+}
+.php .com {
+  color: green;
+}
+.php .const1 {
+  color: maroon;
+}
+.php .const2 {
+  color: maroon;
+}
+.php .function {
+  color: #e17100;
+}
+.php .global {
+  color: maroon;
+}
+.php .keyword {
+  color: blue;
+}
+.php .mlcom {
+  color: gray;
+}
+.php .name {
+  color: maroon;
+}
+.php .number {
+  color: #880;
+}
+.php .string1 {
+  color: teal;
+}
+.php .string2 {
+  color: teal;
+}
+.php .value {
+  color: gray;
+}
+.php .variable {
+  color: #e15c03;
+}
+
+.css .mlcom {
+  color: green;
+}
+.css .color {
+  color: black;
+}
+.css .string {
+  color: teal;
+}
+.css .attrib {
+  color: blue;
+}
+.css .value {
+  color: navy;
+}
+.css .number {
+  color: #880;
+}

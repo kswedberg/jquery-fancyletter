@@ -89,7 +89,7 @@ test('Remaining text after fancy letter is correct', 5, function() {
          'Twice-Told Tales'
         ];
     li.each(function(index) {
-      var txt = $(this).text();
+      var txt = $(this).text().trim().replace(/\s\s+/g, ' ');
       equal(contents[index], txt, 'full text is ' +  contents[index]);
 
     });

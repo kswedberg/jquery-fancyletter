@@ -1,14 +1,12 @@
-jQuery Fancy Letter Plugin
-==========================
+# jQuery Fancy Letter Plugin
 
 The Fancy Letter Plugin lets you prettify your web page by styling the first letter of any element while keeping the HTML markup clean and readable by both human and machine.
 
-Usage
---------
+## Usage
 
-To use the Fancy Letter Plugin, reference "jquery.fancyletter.js" (or "jquery.fancyletter.min.js") after you reference the jQuery core file and before you reference the script that uses `.fancyletter()`:
+To use the Fancy Letter Plugin, reference "jquery.fancyletter.js" (or "jquery.fancyletter.min.js") after you reference the jQuery core file and before you reference the script that uses `.fancyletter()`. For example:
 
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="/path/to/jquery.fancyletter.min.js"></script>
     <script src="/path/to/my-custom-script.js"></script>
 
@@ -20,10 +18,9 @@ If that paragraph begins with "Let us go then, you and I," it will be converted 
 
     <span class="fancy-letter ltr-l">L</span>et us go then, you and I,
 
-You can then style `.fancy-letter` in your stylesheet to make it stand out. See <a href="http://plugins.learningjquery.com/fancyletter/#demos">the demo page</a> for examples.
+You can then style `.fancy-letter` in your stylesheet to make it stand out. See <a href="https://kswedberg.github.io/jquery-fancyletter/#demos">the demo page</a> for examples.
 
-Options
--------
+## Options
 
 The following options, shown here with their default values, are available:
 
@@ -78,11 +75,8 @@ You can also override them whenever you call `.fancyletter`:
 
     $('p').first().fancyletter({characters: '[a-zA-Z]'});
 
-Further Information
--------------------
+## Further Information
 
 * Visit the
-<a href="http://plugins.learningjquery.com/fancyletter/">Fancy Letter Plugin homepage</a> for more information and examples.
-* Run the <a href="http://plugins.learningjquery.com/fancyletter/test/">plugin's tests</a>.
-* File a <a href="http://github.com/kswedberg/jquery-fancyletter/issues">bug report</a>.
-
+<a href="https://kswedberg.github.io/jquery-fancyletter/">Fancy Letter Plugin homepage</a> for more information and examples.
+* Run the <a href="https://kswedberg.github.io/jquery-fancyletter/test/">plugin's tests</a>.
