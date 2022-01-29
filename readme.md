@@ -20,7 +20,7 @@ If that paragraph begins with "Let us go then, you and I," it will be converted 
 
     <span class="fancy-letter ltr-l">L</span>et us go then, you and I,
 
-You can then style `.fancy-letter` in your stylesheet to make it stand out. See <a href="https://kswedberg.github.io/jquery-fancyletter/#demos">the demo page</a> for examples.
+You can then style `.fancy-letter` in your stylesheet to make it stand out. See <a href="https://kswedberg.github.io/jquery-fancyletter/#demo">the demo</a> for examples.
 
 ## Options
 
