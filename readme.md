@@ -1,5 +1,7 @@
 # jQuery Fancy Letter Plugin
 
+**NOTE:** This plugin is no longer maintained. You might want to use the CSS `::first-letter` pseudo-element instead.
+
 The Fancy Letter Plugin lets you prettify your web page by styling the first letter of any element while keeping the HTML markup clean and readable by both human and machine.
 
 ## Usage
